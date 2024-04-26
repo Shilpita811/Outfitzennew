@@ -1,0 +1,72 @@
+.logo {
+  color: #000;
+  padding-left: 20px;
+  font-family: "Arizonia", cursive;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 30px;
+  letter-spacing: 2.8px;
+}
+
+.logo:hover {
+  color: #000;
+}
+
+.main-navbar {
+  border-bottom: 1px solid #ccc;
+}
+
+.main-navbar .top-navbar {
+  background-color: rgb(195, 126, 220);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.main-navbar .top-navbar .brand-name {
+  color: #fff;
+}
+
+.main-navbar .top-navbar .nav-link {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.main-navbar .top-navbar .dropdown-menu {
+  padding: 0px 0px;
+  border-radius: 0px;
+}
+
+.main-navbar .top-navbar .dropdown-menu .dropdown-item {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.main-navbar .top-navbar .dropdown-menu .dropdown-item i {
+  width: 20px;
+  text-align: center;
+  color: rgb(195, 126, 220);
+  font-size: 14px;
+}
+
+.main-navbar .navbar {
+  padding: 0px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-navbar .navbar .nav-item .nav-link {
+  padding: 8px 75px;
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-navbar .top-navbar .nav-link {
+      font-size: 12px;
+      padding: 8px 10px;
+  }
+}

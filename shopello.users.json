@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "653bb7749d8f1eda44006ec9"
+  },
+  "name": "Aditya Das",
+  "email": "4adityadas39@gmail.com",
+  "password": "$2a$10$gwAyWXaOs5L0y64EINXDA.pbsVvOq7OANEwFvawGX.Z2UPUyvBai6",
+  "avatar": {
+    "public_id": "avatars/n1sflvwzdwxqm87fie4x",
+    "url": "https://res.cloudinary.com/dejkfqabk/image/upload/v1698412405/avatars/n1sflvwzdwxqm87fie4x.jpg"
+  },
+  "role": "user",
+  "createdAt": {
+    "$date": "2023-10-27T13:10:39.250Z"
+  },
+  "__v": 0
+}]
