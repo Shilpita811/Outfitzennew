@@ -1,13 +1,24 @@
 import React, { Fragment, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import Loader from '../layout/Loader/Loader';
 import MetaData from '../layout/MetaData';
 import "./Profile.css";
+import { logout } from '../../actions/userAction'
+import { useAlert } from 'react-alert';
 
 const Profile = () => {
   const { user, loading, isAuthenticated } = useSelector((state) => state.user);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const alert = useAlert();
+
+  const handleLogout = () =>{
+    dispatch(logout());
+    navigate('/');
+    alert.success("Logout Successfully");
+
+  }
 
   useEffect(() => {
     if (isAuthenticated === false) {
@@ -40,8 +51,10 @@ const Profile = () => {
             </div>
 
             <div>
+              {user.role === "admin" ? <Link to="/admin/dashboard">Dashboard</Link> : ''}
               <Link to="/orders">My Orders</Link>
               <Link to="/password/update">Change Password</Link>
+              <button onClick={handleLogout}>Logout</button>
             </div>
           </div>
         </div>

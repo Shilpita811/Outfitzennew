@@ -1,8 +1,11 @@
-import React from 'react'
-import "./Header.css"
+import React, { useState } from 'react'
+import "./Header.css";
+import { Link } from 'react-router-dom';
+
 
 
 const Header = () => {
+  // const { user, isAuthenticated, loading } = useState((state) => state.user);
   return (
     <div class="main-navbar shadow-sm sticky-top">
       <div class="top-navbar">
@@ -34,20 +37,25 @@ const Header = () => {
                     <i class="fa fa-heart"></i> Wishlist
                   </a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-user"></i> Account
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/registration"><i class="fa fa-user"></i> Register</a></li>
-                    <li><a class="dropdown-item" href="/login"><i class="fa fa-sign-out"></i> Login </a></li>
-                    
-                    <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
-                    {/* <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li> */}
-                  </ul>
-                </li>
+                {/* {isAuthenticated === false ? (
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">
+                      <i class="fa fa-heart"></i> Loging/Singup
+                    </a>
+                  </li>
+                ) : (
+                  <li class="nav-item">
+                    <a class="nav-link" href="/account">
+                     Account
+                    </a>
+                  </li>
+                )} */}
+                <li class="nav-item">
+                    <Link class="nav-link" to="/account">
+                     Account
+                    </Link>
+                  </li>
+
               </ul>
             </div>
           </div>
@@ -67,8 +75,8 @@ const Header = () => {
                 <a class="nav-link" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">All Categories</a>
-                
+                <a class="nav-link" href="/products">All Categories</a>
+
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">New Arrivals</a>

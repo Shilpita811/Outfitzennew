@@ -1,5 +1,5 @@
-import './App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+// import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './component/layout/Header/Header.js';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WebFont from "webfontloader";
@@ -11,6 +11,8 @@ import ProductDetails from './component/Product/ProductDetails';
 import Products from './component/Product/Products';
 import Search from './component/Product/Search';
 import LoginSignUp from './component/User/LoginSignUp';
+import Registration from './component/Registration/Registration.js';
+import Login from './component/Login/Login.js'
 import Profile from "./component/User/Profile.js";
 import store from "./store";
 import { loadUser } from './actions/userAction';
@@ -82,7 +84,6 @@ function App() {
       )}
       <Fragment>
         <Header />
-        {isAuthenticated && <UserOption user={user} />}
         <Routes>
           <Route extact path="/" element={<Home />} />
           <Route extact path="/product/:id" element={<ProductDetails />} />
@@ -91,11 +92,13 @@ function App() {
           <Route extact path="/search" element={<Search />} />
           <Route extact path="/contact" element={<Contact />} />
           <Route extact path="/about" element={<About />} />
-          <Route extact path="/login" element={<LoginSignUp />} />
+          <Route extact path="/registration" element={<Registration />} />
+          <Route extact path="/login" element={<Login />} />
+          <Route />
           <Route extact path='/sellerrequest' element={<SellerRequest />} />
 
 
-          <Route extact path='/account' element={isAuthenticated ? <Profile /> : <LoginSignUp />} />
+          <Route extact path='/account' element={isAuthenticated ? <Profile /> : <Login />} />
           <Route extact path='/me/update' element={isAuthenticated ? <UpdateProfile /> : <LoginSignUp />} />
           <Route extact path='/password/update' element={isAuthenticated ? <UpdatePassword /> : <LoginSignUp />} />
           <Route extact path='/login/shipping' element={isAuthenticated ? <Shipping /> : <LoginSignUp />} />
