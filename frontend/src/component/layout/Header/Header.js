@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./Header.css";
 import { Link } from 'react-router-dom';
 
@@ -52,6 +52,7 @@ const Header = () => {
                 )} */}
                 <li class="nav-item">
                     <Link class="nav-link" to="/account">
+                <i class="fa fa-user"></i>
                      Account
                     </Link>
                   </li>
@@ -63,7 +64,7 @@ const Header = () => {
       </div>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none logo" href="#">
+          <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none logo" href="/">
             Outfitzen
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,19 +80,22 @@ const Header = () => {
 
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">New Arrivals</a>
+                <a class="nav-link" href="#">Men</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Featured Products</a>
+                <a class="nav-link" href="#">  Women</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/men">Men</a>
+                <a class="nav-link" href="/Men">Kid</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/women">Women</a>
+                <a class="nav-link" href="/Women">Furniture</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/kids">Kids</a>
+                <a class="nav-link" href="Kids">Electronic</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Kids">New Arrival</a>
               </li>
               {/* <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>

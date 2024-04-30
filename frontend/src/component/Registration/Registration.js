@@ -85,9 +85,9 @@ const Registration = () => {
                         </div>
                         <div className="input__box img">
                             <span className="details">Photo</span>
-                            <input type="file" placeholder="********" name="avatar" onChange={registerDataChange} required />
+                            <input type="file" placeholder="" name="avatar" onChange={registerDataChange} required style={{paddingTop : "7px"}}/>
                         </div>
-                        <img src={avatarPreview} alt="Avatar Preview" />
+                        <img src={avatarPreview} alt="Avatar Preview" style={{height: "80px"}}/>
 
                     </div>
                     <div className="button">

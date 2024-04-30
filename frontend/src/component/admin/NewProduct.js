@@ -34,13 +34,13 @@ const NewProduct = () => {
 
 
     const categories = [
-        "Laptop",
-        "Footwear",
-        "Bottom",
-        "Tops",
-        "Attire",
-        "Camera",
-        "SmartPhones",
+        "Electronic",
+        "Men",
+        "Women",
+        "Kid",
+        "Furniture",
+        "New Arrival",
+       
     ];
 
 
