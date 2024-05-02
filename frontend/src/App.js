@@ -49,7 +49,7 @@ import SellerRequest from './component/seller/SellerRequest';
 import RequestSuccess from './component/seller/RequestSuccess.js'
 import SellerList from './component/admin/SellerList';
 import ProcessRequest from './component/admin/ProcessRequest.js';
-import Product from './component/products/Product.js';
+// import Product from './component/products/Product.js';
 
 // import Women from './component/Womenproduct/Women.js';
 // import Kids from './component/Kidsproduct/Kids.js';
@@ -103,7 +103,7 @@ function App() {
           <Route extact path="/about" element={<About />} />
           <Route extact path="/registration" element={<Registration />} />
           <Route extact path="/login" element={<Login />} />
-          <Route extact path="/product" element={<Product />} />
+          {/* <Route extact path="/product" element={<Product />} /> */}
 
           {/* <Route extact path="/women" element={<Women />} />
           <Route extact path="/men" element={<Men />} />

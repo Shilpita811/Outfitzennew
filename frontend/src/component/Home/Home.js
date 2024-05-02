@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from '../layout/Carousel/Slider';
-import Product from '../products/Product';
+// import Product from '../products/Product';
 
 const Home = () => {
 
@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Slider />
-      <Product/>
+      {/* <Product/> */}
 
       
     </>
