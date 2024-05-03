@@ -50,7 +50,7 @@
     padding: 1vmax;
     margin: 5vmax auto;
     color: rgb(0, 0, 0, 0.7);
-}
+} */
 .container{
     display: flex;
     margin: 2vmax auto;
@@ -71,6 +71,7 @@
 }
 .productCard > img{
     width: 20vmax;
+    max-height:40vmax ;
 }
 .productCard > div{
     margin: 0.5vmax;
@@ -114,4 +115,4 @@
         margin: 0 0.5vmax;
         font: 300 1vmax "Roboto"; 
     }
-} */
+}

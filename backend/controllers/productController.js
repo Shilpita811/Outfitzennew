@@ -44,7 +44,7 @@ exports.createProduct = cathAsyncErrors(async (req, res, next) => {
 exports.getAllProduct = cathAsyncErrors(async (req, res, next) => {
 
 
-    const resultPerPage = 6;
+    const resultPerPage = 9;
     const productsCount = await Product.countDocuments();
     const apiFeatures = new ApiFeatures(Product.find(), req.query)
         .search()
@@ -52,17 +52,17 @@ exports.getAllProduct = cathAsyncErrors(async (req, res, next) => {
         .pagination(resultPerPage);
 
 
-    // let products = await apifeatures.query;
-    // let filterProductsCount = products.length;
-    // apiFeatures.pagination(resultPerPage);
+    let products = await apiFeatures.query;
+    let filterProductsCount = products.length;
+    apiFeatures.pagination(resultPerPage);
 
-    const products = await apiFeatures.query;
+    // const products = await apiFeatures.query;
     res.status(200).json({
         success: true,
         products,
         productsCount,
         resultPerPage,
-        //filterProductsCount,
+        filterProductsCount,
     })
 });
 

@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Header.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 const Header = () => {
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // const path = location.pathname;
+    if(keyword.trim()){
+        navigate(`/products/${keyword}`);
+    }else(
+        navigate(`/products`)
+    )
+ }
   // const { user, isAuthenticated, loading } = useState((state) => state.user);
   return (
     <div class="main-navbar shadow-sm sticky-top">
@@ -15,9 +27,9 @@ const Header = () => {
               <h5 class="brand-name"><a className="logo" href='/'>OutfitZen</a></h5>
             </div>
             <div class="col-md-5 my-auto">
-              <form role="search">
+              <form role="search"  onSubmit={handleSubmit}>
                 <div class="input-group">
-                  <input type="search" placeholder="Search your product" class="form-control" />
+                  <input type="search"  value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="Search your product" class="form-control" />
                   <button class="btn bg-white" type="submit">
                     <i class="fa fa-search"></i>
                   </button>
@@ -32,11 +44,11 @@ const Header = () => {
                     <i class="fa fa-shopping-cart"></i> Cart
                   </a>
                 </li>
-                <li class="nav-item">
+                {/* <li class="nav-item">
                   <a class="nav-link" href="#">
                     <i class="fa fa-heart"></i> Wishlist
                   </a>
-                </li>
+                </li> */}
                 {/* {isAuthenticated === false ? (
                   <li class="nav-item">
                     <a class="nav-link" href="/login">

@@ -65,12 +65,12 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div style={{textAlign: "center", marginTop: "20px;"}}>
+                {/* <div style={{textAlign: "center", marginTop: "20px;"}}>
                     <p> Copyright &copy;
                         
                         All rights reserved 2024 | Outfitzen
                     </p>
-                </div>
+                </div> */}
 
             </div>
         </section>
