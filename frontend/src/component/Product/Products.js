@@ -115,6 +115,7 @@ const Products = () => {
       <div className="filterBox">
         <Typography>Price</Typography>
         <Slider 
+          style={{color:"rgb(195, 126, 220)"}}
           value={price}
           onChange={priceHandler}
           valueLabelDisplay="auto"
@@ -134,9 +135,10 @@ const Products = () => {
           </li>
           )}
         </ul>
-        <fieldset>
+        {/* <fieldset> */}
           <Typography component="legend">Ratings Above</Typography>
           <Slider
+           style={{color:"rgb(195, 126, 220)"}}
            value={ratings}
            onChange={(e, newRating) =>{
             setRatings(newRating);
@@ -146,7 +148,7 @@ const Products = () => {
            min={0}
            max={5}
           />
-        </fieldset>
+        {/* </fieldset> */}
       </div>
 
       {resultPerPage < productsCount && (

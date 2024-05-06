@@ -82,6 +82,7 @@ function App() {
   }, [])
   return (
     <Router>
+      <Header />
       {stripeApiKey && (
         <Elements stripe={loadStripe(stripeApiKey)}>
           <Routes>
@@ -92,7 +93,7 @@ function App() {
         </Elements>
       )}
       <Fragment>
-        <Header />
+        
         <Routes>
           <Route extact path="/" element={<Home />} />
           <Route extact path="/product/:id" element={<ProductDetails />} />
@@ -118,7 +119,7 @@ function App() {
           <Route extact path='/account' element={isAuthenticated ? <Profile /> : <Login />} />
           <Route extact path='/me/update' element={isAuthenticated ? <UpdateProfile /> : <LoginSignUp />} />
           <Route extact path='/password/update' element={isAuthenticated ? <UpdatePassword /> : <LoginSignUp />} />
-          <Route extact path='/login/shipping' element={isAuthenticated ? <Shipping /> : <LoginSignUp />} />
+          <Route extact path='/shipping' element={isAuthenticated ? <Shipping /> : <LoginSignUp />} />
           <Route extact path='/order/confirm' element={isAuthenticated ? <ConfirmOrder /> : <LoginSignUp />} />
           <Route extact path='/success' element={isAuthenticated ? <OrderSuccess /> : <LoginSignUp />} />
           <Route extact path='/orders' element={isAuthenticated ? <MyOrders /> : <LoginSignUp />} />

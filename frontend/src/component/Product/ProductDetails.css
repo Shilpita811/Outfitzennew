@@ -83,7 +83,7 @@
     cursor: pointer;
     color: white;
     transition: all 0.5s;
-    background-color: #0007ff;
+    background-color:rgb(195, 126, 220);
     font: 600 0.7vmax "Roboto";
     border-radius: 5px;
     padding: 0.5vmax 2vmax;
@@ -91,7 +91,7 @@
     outline: none;
 }
 .detailsBlock-3-1 > button:last-child:hover{
-    background-color: #0309af;
+    background-color:rgb(107, 55, 126);
     transform: scale(1.1);
 }
 .detailsBlock-3 > p{
@@ -115,7 +115,7 @@
     cursor: pointer;
     color: white;
     transition: all 0.5s;
-    background-color: #0007ff;
+    background-color:rgb(195, 126, 220);
     font: 600 0.7vmax "Roboto";
     border-radius: 5px;
     padding: 0.5vmax 2vmax;
@@ -123,7 +123,7 @@
     outline: none;
 }
 .submitReview:hover{
-    background-color: #0309af;
+    background-color: rgb(107, 55, 126);
     transform: scale(1.1);
 }
 .submitDialog {
