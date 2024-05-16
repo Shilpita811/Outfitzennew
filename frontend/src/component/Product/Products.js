@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, getProduct } from "../../actions/productActions";
 //import Loader from "../layout/Loader/Loader";
 import ProductCard from "../Home/ProductCard";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import Pagination from "react-js-pagination";
 import Slider from "@material-ui/core/Slider";
 import Typography from "@material-ui/core/Typography";
@@ -27,13 +27,17 @@ const categories = [
  
 
 const Products = () => {
-  const { keyword } = useParams();
+  // const { keyword } = useParams();
   const dispatch = useDispatch();
   const alert = useAlert();
+  const location = useLocation();
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([0,25000]);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(location.search ? location.search.split("=")[1] : "");
   const [ratings, setRatings] = useState(0);
+  const params = useParams();
+
+  const keyword = params.keyword;
 
   const setCurrentPageNo = (e)=>{
     setCurrentPage(e);

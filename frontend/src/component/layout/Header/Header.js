@@ -11,12 +11,20 @@ const Header = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // const path = location.pathname;
-    if(keyword.trim()){
-        navigate(`/products/${keyword}`);
-    }else(
-        navigate(`/products`)
+    if (keyword.trim()) {
+      navigate(`/products/${keyword}`);
+    } else (
+      navigate(`/products`)
     )
- }
+  }
+
+  const delayInSeconds = 0;
+
+  const reloadPage = () => {
+    setTimeout(() => {
+      window.location.reload();
+    }, delayInSeconds * 1000);
+  };
   // const { user, isAuthenticated, loading } = useState((state) => state.user);
   return (
     <div class="main-navbar shadow-sm sticky-top">
@@ -27,9 +35,9 @@ const Header = () => {
               <h5 class="brand-name"><a className="logo" href='/'>OutfitZen</a></h5>
             </div>
             <div class="col-md-5 my-auto">
-              <form role="search"  onSubmit={handleSubmit}>
+              <form role="search" onSubmit={handleSubmit}>
                 <div class="input-group">
-                  <input type="search"  value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="Search your product" class="form-control" />
+                  <input type="search" value={keyword} onChange={(e) => setKeyword(e.target.value)} placeholder="Search your product" class="form-control" />
                   <button class="btn bg-white" type="submit">
                     <i class="fa fa-search"></i>
                   </button>
@@ -45,29 +53,29 @@ const Header = () => {
                   </a>
                 </li>
                 {/* <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <i class="fa fa-heart"></i> Wishlist
-                  </a>
-                </li> */}
+                    <a class="nav-link" href="#">
+                      <i class="fa fa-heart"></i> Wishlist
+                    </a>
+                  </li> */}
                 {/* {isAuthenticated === false ? (
-                  <li class="nav-item">
-                    <a class="nav-link" href="/login">
-                      <i class="fa fa-heart"></i> Loging/Singup
-                    </a>
-                  </li>
-                ) : (
-                  <li class="nav-item">
-                    <a class="nav-link" href="/account">
-                     Account
-                    </a>
-                  </li>
-                )} */}
+                    <li class="nav-item">
+                      <a class="nav-link" href="/login">
+                        <i class="fa fa-heart"></i> Loging/Singup
+                      </a>
+                    </li>
+                  ) : (
+                    <li class="nav-item">
+                      <a class="nav-link" href="/account">
+                      Account
+                      </a>
+                    </li>
+                  )} */}
                 <li class="nav-item">
-                    <Link class="nav-link" to="/account">
-                <i class="fa fa-user"></i>
-                     Account
-                    </Link>
-                  </li>
+                  <Link class="nav-link" to="/account">
+                    <i class="fa fa-user"></i>
+                    Account
+                  </Link>
+                </li>
 
               </ul>
             </div>
@@ -92,29 +100,29 @@ const Header = () => {
 
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Men</a>
+                <Link class="nav-link" to="/products?category=Men" onClick={reloadPage}>Men</Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">  Women</a>
+                <Link class="nav-link" to="/products?category=Women" onClick={reloadPage}>Women</Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/Men">Kid</a>
+                <Link class="nav-link" to="/products?category=Kid" onClick={reloadPage}>Kid</Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/Women">Furniture</a>
+                <Link class="nav-link" to="/products?category=Furniture" onClick={reloadPage}>Furniture</Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Kids">Electronic</a>
+                <Link class="nav-link" to="/products?category=Electronic" onClick={reloadPage}>Electronic</Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Kids">New Arrival</a>
+                <Link class="nav-link" to="/products?category=New Arrival" onClick={reloadPage}>New Arrival</Link>
               </li>
               {/* <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Appliances</a>
-              </li> */}
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Appliances</a>
+                </li> */}
             </ul>
           </div>
         </div>

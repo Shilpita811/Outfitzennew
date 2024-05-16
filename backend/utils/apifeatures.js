@@ -16,8 +16,9 @@ class ApiFeatures {
     filter(){
         const queryCopy = {...this.querystr}
         // Removing some fields for category
-        const removeFields = ["keyword","page","limit"];
-        removeFields.forEach(field => delete queryCopy[field]);
+        const removeFields = ["keyword", "page", "limit"];
+
+        removeFields.forEach((key) => delete queryCopy[key]);
         // Filter for price and reting
         let querystr = JSON.stringify(queryCopy);
         querystr = querystr.replace(/\b(gt|gte|lt|lte)\b/g,field => `$${field}`);
