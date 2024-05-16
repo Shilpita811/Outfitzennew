@@ -49,22 +49,21 @@ exports.getAllProduct = cathAsyncErrors(async (req, res, next) => {
     const productsCount = await Product.countDocuments();
     const apiFeatures = new ApiFeatures(Product.find(), req.query)
         .search()
-        .filter()
-        .pagination(resultPerPage);
-
+        .filter();
 
     let products = await apiFeatures.query;
-    let filterProductsCount = products.length;
-    apiFeatures.pagination(resultPerPage);
+    let filteredProductsCount = products.length;
+    
+    apiFeatures.pagination(resultPerPage)
 
-    // const products = await apiFeatures.query;
+    products = await apiFeatures.query.clone();
     res.status(200).json({
         success: true,
         products,
         productsCount,
         resultPerPage,
-        filterProductsCount,
-    })
+        filteredProductsCount,
+    });
 });
 
 // Get All Product (Admin)
